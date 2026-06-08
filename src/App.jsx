@@ -125,6 +125,20 @@ const showcases = [
     role: "Gameplay programmer / systems designer",
   },
   {
+    id: "fps-system-wip",
+    title: "FPS System Prototype",
+    category: "FPS / Combat Systems",
+    status: "Work in progress",
+    featured: false,
+    videoSrc: "/videos/Roblox%20Studio%202026.06.08%20-%2019.51.23.18.mp4",
+    visualLabel: "FPS System WIP",
+    visualSubtext: "Early first-person combat prototype",
+    summary:
+      "A heavily work-in-progress Roblox FPS system prototype exploring first-person weapon handling, combat feel, and the foundation for a larger shooter system.",
+    built: ["FPS controller", "weapon handling", "combat prototype", "WIP systems"],
+    role: "Gameplay programmer / prototype developer",
+  },
+  {
     id: "game-of-thrones-roleplay",
     title: "Game of Thrones Roleplay Game",
     category: "Roleplay / World Systems",
@@ -280,6 +294,7 @@ const showcaseFilters = [
   { label: "Showcase all", value: "All" },
   { label: "Completed", value: "Completed" },
   { label: "Proof of concept", value: "Proof of concept" },
+  { label: "Work in progress", value: "Work in progress" },
 ];
 
 function smoothScrollTo(event, targetId) {
@@ -435,7 +450,7 @@ export default function RileyPortfolio() {
   }, [activeFilter]);
 
   const completedCount = showcases.filter((showcase) => showcase.status === "Completed").length;
-  const conceptCount = showcases.filter((showcase) => showcase.status === "Proof of concept").length;
+  const wipCount = showcases.filter((showcase) => showcase.status === "Work in progress").length;
 
   return (
     <div className="min-h-screen bg-zinc-950 text-zinc-100">
@@ -517,8 +532,8 @@ export default function RileyPortfolio() {
                     <p className="text-xs text-zinc-400">Done</p>
                   </div>
                   <div className="p-4">
-                    <p className="text-2xl font-black text-amber-200">{conceptCount}</p>
-                    <p className="text-xs text-zinc-400">Concepts</p>
+                    <p className="text-2xl font-black text-amber-200">{wipCount}</p>
+                    <p className="text-xs text-zinc-400">WIP</p>
                   </div>
                 </div>
               </CardContent>
